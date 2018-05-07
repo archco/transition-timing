@@ -9,7 +9,13 @@
     "build": "webpack --hide-modules",
     "watch": "npm run build -- --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "transition",
+    "timing function",
+    "ease",
+    "cubic-bezier",
+    "steps"
+  ],
   "author": "archcoster@gmail.com",
   "license": "MIT",
   "dependencies": {

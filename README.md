@@ -2,6 +2,18 @@
 
 The javascript library that includes transition timing functions such as easing and steps methods.
 
+## Installation
+
+``` sh
+npm i transition-timing
+```
+
+``` js
+import { easing } from 'transition-timing';
+
+const ease = easing('ease');
+```
+
 ## Usage
 
 ### TimingFunction
