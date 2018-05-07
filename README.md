@@ -1,6 +1,6 @@
 # Transition Timing Functions
 
-The javascript library that includes transition timing function such as easing or steps method.
+The javascript library that includes transition timing functions such as easing and steps methods.
 
 ## References
 
