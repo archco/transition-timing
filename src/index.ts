@@ -8,7 +8,7 @@ export interface CommonKeywords {
 }
 
 // @link https://drafts.csswg.org/css-timing-1/#timing-functions
-export const common: CommonKeywords = {
+export const Common: CommonKeywords = {
   linear: [0.0, 0.0, 1.0, 1.0],
   ease: [0.25, 0.1, 0.25, 1],
   easeIn: [0.42, 0, 1, 1],
@@ -19,7 +19,7 @@ export const common: CommonKeywords = {
 export function easing(...args: any[]): TimingFunction {
   let numbers = [];
   if (args.length === 1 && typeof args[0] === 'string') {
-    numbers = common[args[0]];
+    numbers = Common[args[0]];
   } else if (args.length === 1 && Array.isArray(args[0])) {
     numbers = args[0];
   } else if (args.length === 4 && args.every(a => typeof a === 'number')) {

@@ -200,12 +200,12 @@ module.exports = function bezier (mX1, mY1, mX2, mY2) {
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
-/*! exports provided: cubicBezier, steps, common, easing */
+/*! exports provided: cubicBezier, steps, Common, easing */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "common", function() { return common; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Common", function() { return Common; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "easing", function() { return easing; });
 /* harmony import */ var bezier_easing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bezier-easing */ "./node_modules/bezier-easing/src/index.js");
 /* harmony import */ var bezier_easing__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bezier_easing__WEBPACK_IMPORTED_MODULE_0__);
@@ -217,7 +217,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // @link https://drafts.csswg.org/css-timing-1/#timing-functions
-var common = {
+var Common = {
     linear: [0.0, 0.0, 1.0, 1.0],
     ease: [0.25, 0.1, 0.25, 1],
     easeIn: [0.42, 0, 1, 1],
@@ -231,7 +231,7 @@ function easing() {
     }
     var numbers = [];
     if (args.length === 1 && typeof args[0] === 'string') {
-        numbers = common[args[0]];
+        numbers = Common[args[0]];
     }
     else if (args.length === 1 && Array.isArray(args[0])) {
         numbers = args[0];
