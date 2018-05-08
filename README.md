@@ -5,7 +5,7 @@ The javascript library that includes transition timing functions such as easing 
 ## Installation
 
 ``` sh
-npm i transition-timing
+npm install transition-timing
 ```
 
 ``` js
@@ -19,6 +19,12 @@ const ease = easing('ease');
 ### TimingFunction
 
 ``` ts
+/**
+ * Timing function type.
+ *
+ * @param {number} t time ratio. from 0 to 1.
+ * @returns {number} output ratio. from 0 to 1.
+ */
 type TimingFunction = (t: number) => number;
 ```
 

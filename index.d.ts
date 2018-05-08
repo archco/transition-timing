@@ -4,6 +4,13 @@ export as namespace TransitionTiming;
 
 export { cubicBezier };
 
+/**
+ * Timing function type.
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Timing_functions
+ *
+ * @param {number} t time ratio. from 0 to 1.
+ * @returns {number} output ratio. from 0 to 1.
+ */
 export type TimingFunction = (t: number) => number;
 
 export interface CommonKeywords {
