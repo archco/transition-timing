@@ -1,6 +1,6 @@
 {
   "name": "transition-timing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The javascript library that includes transition timing functions such as easing and steps methods.",
   "main": "dist/transition-timing.min.js",
   "types": "index.d.ts",
