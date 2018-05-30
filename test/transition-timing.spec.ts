@@ -13,4 +13,25 @@ describe('#easing', () => {
     expect(easeIn(0.5)).toBeLessThan(0.4);
     expect(easeIn(1)).toEqual(1);
   });
+
+  it('available argument type is string, 4 number args or 4 number array.', () => {
+    // keyword string.
+    expect(typeof easing('ease')).toBe('function');
+    // 4 numbers.
+    expect(typeof easing(0.0, 0.0, 1.0, 1.0)).toBe('function');
+    // an array includes 4 numbers
+    expect(typeof easing([0.0, 0.0, 1.0, 1.0])).toBe('function');
+  });
+
+  it('throw type error if gave wrong arguments.', () => {
+    expect(() => {
+      const fn = easing({});
+    }).toThrowError(TypeError);
+  });
+
+  it('throw error if gave wrong name.', () => {
+    expect(() => {
+      const fn = easing('wrong');
+    }).toThrowError(ReferenceError);
+  });
 });

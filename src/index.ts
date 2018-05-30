@@ -20,6 +20,9 @@ export function easing(...args: any[]): TimingFunction {
   let numbers = [];
   if (args.length === 1 && typeof args[0] === 'string') {
     numbers = Common[args[0]];
+    if (!numbers) {
+      throw new ReferenceError('Wrong common keyword.');
+    }
   } else if (args.length === 1 && Array.isArray(args[0])) {
     numbers = args[0];
   } else if (args.length === 4 && args.every(a => typeof a === 'number')) {
