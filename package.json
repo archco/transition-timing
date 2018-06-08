@@ -19,18 +19,18 @@
   "author": "archcoster@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "bezier-easing": "^2.0.3"
+    "bezier-easing": "^2.1.0"
   },
   "devDependencies": {
     "@types/bezier-easing": "^2.0.0",
-    "@types/jest": "^22.2.3",
-    "jest": "^22.4.4",
+    "@types/jest": "^23.0.0",
+    "jest": "^23.1.0",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^22.4.6",
-    "ts-loader": "^4.3.0",
-    "typescript": "^2.8.3",
-    "webpack": "^4.10.1",
-    "webpack-cli": "^2.1.4",
+    "ts-loader": "^4.3.1",
+    "typescript": "^2.9.1",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3",
     "webpack-merge": "^4.1.2",
     "webpack-notifier": "^1.6.0"
   },
