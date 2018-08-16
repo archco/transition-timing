@@ -5,7 +5,7 @@ function decimal(num, precision) {
   return Math.round(num * factor) / factor;
 }
 
-function show(timeFn) {
+function showOutput(timeFn) {
   const points = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
   for (const i of points) {
     const o = timeFn(i);
@@ -13,22 +13,14 @@ function show(timeFn) {
   }
 }
 
-console.log('linear');
-show(easing('linear'));
-console.log('');
+function log(name) {
+  console.log(`Transition Timing Function "${name}": \n`);
+  showOutput(easing(name));
+  console.log('\n');
+}
 
-console.log('ease');
-show(easing('ease'));
-console.log('');
-
-console.log('easeIn');
-show(easing('easeIn'));
-console.log('');
-
-console.log('easeOut');
-show(easing('easeOut'));
-console.log('');
-
-console.log('easeInOut');
-show(easing('easeInOut'));
-console.log('');
+log('linear');
+log('ease');
+log('easeIn');
+log('easeOut');
+log('easeInOut');
