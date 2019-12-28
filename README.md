@@ -1,6 +1,6 @@
 # Transition Timing Functions
 
-A library that provides methods that generating a transition timing functions such as easing or steps.
+This library provides convenient methods that generating a transition [timing function](https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function#Timing_functions) such as easing or steps.
 
 ## Installation
 
@@ -41,7 +41,7 @@ function cubicBezier(mX1: number, mY1: number, mX2: number, mY2: number): Timing
 > This is helper method for [cubicBezier](#cubicbezier).
 
 ``` ts
-function easing(...args: any[]): TimingFunction;
+function easing(arg: string|number|[number, number, number, number], ...args: number[]): TimingFunction;
 ```
 
 #### Examples
@@ -68,7 +68,6 @@ function steps(num: number, direction: 'start'|'end'): TimingFunction;
 
 ## References
 
-- [scrollIt](https://github.com/archco/moss-ui/blob/master/src/js/lib/methods/scroll-it.js)
 - [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function)
 - [cubic bezier curves](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves)
 - [step function](https://en.wikipedia.org/wiki/Step_function)

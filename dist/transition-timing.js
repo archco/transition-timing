@@ -227,10 +227,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "easing", function() { return easing; });
 /* harmony import */ var bezier_easing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bezier-easing */ "./node_modules/bezier-easing/src/index.js");
 /* harmony import */ var bezier_easing__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bezier_easing__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "cubicBezier", function() { return bezier_easing__WEBPACK_IMPORTED_MODULE_0__; });
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "cubicBezier", function() { return bezier_easing__WEBPACK_IMPORTED_MODULE_0___default.a; });
 /* harmony import */ var _steps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./steps */ "./src/steps.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "steps", function() { return _steps__WEBPACK_IMPORTED_MODULE_1__["steps"]; });
 
+var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 
 
 
@@ -242,29 +249,29 @@ var Common = {
     easeOut: [0, 0, 0.58, 1],
     easeInOut: [0.42, 0, 0.58, 1],
 };
-function easing() {
+function easing(arg) {
     var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
     }
     var numbers = [];
-    if (args.length === 1 && typeof args[0] === 'string') {
-        numbers = Common[args[0]];
+    if (typeof arg === 'string') {
+        numbers = Common[arg];
         if (!numbers) {
-            throw new ReferenceError('Wrong common keyword.');
+            throw new ReferenceError('Wrong common keyword. available common keywords is linear, ease, easeIn, easeOut or easeInOut.');
         }
     }
-    else if (args.length === 1 && Array.isArray(args[0])) {
-        numbers = args[0];
+    else if (Array.isArray(arg)) {
+        numbers = arg;
     }
-    else if (args.length === 4 && args.every(function (a) { return typeof a === 'number'; })) {
-        numbers = args;
+    else if (typeof arg === 'number' && args.length === 3) {
+        numbers = __spreadArrays([arg], args);
     }
     else {
         throw new TypeError('Wrong arguments.');
     }
     var x1 = numbers[0], y1 = numbers[1], x2 = numbers[2], y2 = numbers[3];
-    return bezier_easing__WEBPACK_IMPORTED_MODULE_0__(x1, y1, x2, y2);
+    return bezier_easing__WEBPACK_IMPORTED_MODULE_0___default()(x1, y1, x2, y2);
 }
 
 
