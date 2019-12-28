@@ -24,14 +24,10 @@ describe('#easing', () => {
   });
 
   it('throw type error if gave wrong arguments.', () => {
-    expect(() => {
-      const fn = easing({});
-    }).toThrowError(TypeError);
+    expect(() => easing(4)).toThrowError(TypeError);
   });
 
   it('throw error if gave wrong name.', () => {
-    expect(() => {
-      const fn = easing('wrong');
-    }).toThrowError(ReferenceError);
+    expect(() => easing('wrong')).toThrowError(ReferenceError);
   });
 });

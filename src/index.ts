@@ -1,4 +1,4 @@
-import * as cubicBezier from 'bezier-easing';
+import cubicBezier from 'bezier-easing';
 import { steps, TimingFunction } from './steps';
 
 export { cubicBezier, steps, TimingFunction };
@@ -16,17 +16,17 @@ export const Common: CommonKeywords = {
   easeInOut: [0.42, 0, 0.58, 1],
 };
 
-export function easing(...args: any[]): TimingFunction {
+export function easing(arg: string|number|[number, number, number, number], ...args: number[]): TimingFunction {
   let numbers = [];
-  if (args.length === 1 && typeof args[0] === 'string') {
-    numbers = Common[args[0]];
+  if (typeof arg === 'string') {
+    numbers = Common[arg];
     if (!numbers) {
-      throw new ReferenceError('Wrong common keyword.');
+      throw new ReferenceError('Wrong common keyword. available common keywords is linear, ease, easeIn, easeOut or easeInOut.');
     }
-  } else if (args.length === 1 && Array.isArray(args[0])) {
-    numbers = args[0];
-  } else if (args.length === 4 && args.every(a => typeof a === 'number')) {
-    numbers = args;
+  } else if (Array.isArray(arg)) {
+    numbers = arg;
+  } else if (typeof arg === 'number' && args.length === 3) {
+    numbers = [arg, ...args];
   } else {
     throw new TypeError('Wrong arguments.');
   }

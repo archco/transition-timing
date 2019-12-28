@@ -27,9 +27,8 @@ export const Common: CommonKeywords;
  * Generate steps timing function.
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#The_steps()_class_of_timing_functions
  *
- * @export
- * @param {number} num
- * @param {('start'|'end')} direction
+ * @param {number} num number of steps
+ * @param {'start'|'end'} direction step direction 'start' or 'end'
  * @returns {TimingFunction}
  */
 export function steps(num: number, direction: 'start'|'end'): TimingFunction;
@@ -37,8 +36,8 @@ export function steps(num: number, direction: 'start'|'end'): TimingFunction;
 /**
  * The helper method for cubicBezier.
  *
- * @export
- * @param {...any[]} args 4 number arguments or common keyword. e.g. [0, 0, 1, 1] or 'linear'.
+ * @param {string|number|[number, number, number, number]} arg array of 4 numbers or common keyword: `linear`, `ease`, `easeIn`, `easeOut` or `easeInOut`.
+ * @param {...number[]} args other way you could give 4 numbers as arguments. e.g. `easing(0, 0, 1, 1)`
  * @returns {TimingFunction}
  */
-export function easing(...args: any[]): TimingFunction;
+export function easing(arg: string|number|[number, number, number, number], ...args: number[]): TimingFunction;
