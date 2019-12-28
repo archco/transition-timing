@@ -288,12 +288,12 @@ function easing(arg) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "steps", function() { return steps; });
 function steps(num, direction) {
-    var isStart = direction === 'start' ? true : false;
+    var isStart = direction === 'start';
     return function (t) {
-        switch (t) {
-            case 0: return 0;
-            case 1: return 1;
-        }
+        if (t <= 0)
+            return 0;
+        if (t >= 1)
+            return 1;
         for (var i = 1; i <= num; i++) {
             var p = i / num;
             if (p > t) {
